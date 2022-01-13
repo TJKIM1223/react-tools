@@ -438,12 +438,12 @@ export function MDatePicker({type = "period", date, fdateSel}) {
                         <button 
                             key={day} 
                             id="bf1" 
-                            data-date={day} 
+                            data-date={+day} 
                             className={clsx("DPoutCell",
                             (type === "period"
                                 ? ( startDay.year === (cal1date.month === 1 ? cal1date.year - 1 : cal1date.year) && 
                                     startDay.month === (cal1date.month === 1 ? 12 : cal1date.month - 1) && 
-                                    startDay.day === +day )
+                                    startDay.day === day )
                                         ? "outSelected" 
                                         : ""
                                 : ( startDay.year === (cal1date.month - 1 === 1 ? cal1date.year - 1 : cal1date.year) &&
@@ -464,12 +464,12 @@ export function MDatePicker({type = "period", date, fdateSel}) {
                         <button 
                             key={day} 
                             id="now1" 
-                            data-date={day} 
+                            data-date={+day} 
                             className={clsx("DPCalCell", 
                                 (type === "period"
                                 ? ( startDay.year === cal1date.year && 
                                     startDay.month === cal1date.month && 
-                                    startDay.day === +day )
+                                    startDay.day === day )
                                     ? "selected" 
                                     : ""
                                 : (startDay.year === cal1date.year  && startDay.month === cal1date.month  && startDay.day === +day ) || (endDay.year === cal1date.year && endDay.month === cal1date.month && endDay.day === +day)
@@ -487,12 +487,12 @@ export function MDatePicker({type = "period", date, fdateSel}) {
                         <button 
                             key={day} 
                             id="af1" 
-                            data-date={day} 
+                            data-date={+day} 
                             className={clsx("DPoutCell",
                                 (type === "period"
                                 ? ( startDay.year === (cal1date.month === 12 ? cal1date.year + 1 : cal1date.year) && 
                                     startDay.month === (cal1date.month === 12 ? 1 : cal1date.month + 1) && 
-                                    startDay.day === +day )
+                                    startDay.day === day )
                                         ? "outSelected" 
                                         : ""
                                 : ( startDay.year === cal2date.year &&
@@ -516,7 +516,7 @@ export function MDatePicker({type = "period", date, fdateSel}) {
                         <button 
                             key={day} 
                             id="bf2" 
-                            data-date={day} 
+                            data-date={+day} 
                             className={clsx("DPoutCell",
                                 (( startDay.year === cal1date.year &&
                                     startDay.month === cal1date.month && 
@@ -536,7 +536,7 @@ export function MDatePicker({type = "period", date, fdateSel}) {
                         <button 
                             key={day} 
                             id="now2" 
-                            data-date={day} 
+                            data-date={+day} 
                             className={clsx("DPCalCell", 
                                 (( startDay.year === cal2date.year && startDay.month === cal2date.month  && startDay.day === +day ) || ( endDay.year === cal2date.year && endDay.month === cal2date.month && endDay.day === +day)
                                     ? "selected" 
@@ -553,15 +553,9 @@ export function MDatePicker({type = "period", date, fdateSel}) {
                         <button 
                             key={day} 
                             id="af2" 
-                            data-date={day} 
+                            data-date={+day} 
                             className={clsx("DPoutCell",
-                                (type === "period"
-                                ? ( startDay.year === (cal2date.month + 1 === 12 ? cal2date.year + 1 : cal2date.year) && 
-                                    startDay.month === (cal2date.month + 1 === 12 ? 1 : cal2date.month + 1) && 
-                                    startDay.day === +day )
-                                        ? "outSelected" 
-                                        : ""
-                                : ( startDay.year === (cal2date.month + 1 === 1 ? cal2date.year + 1 : cal2date.year) &&
+                                ( startDay.year === (cal2date.month + 1 === 1 ? cal2date.year + 1 : cal2date.year) &&
                                     startDay.month === (cal2date.month + 1 === 1 ? 12 : cal2date.month + 1) && 
                                     startDay.day === +day ) || 
                                   ( endDay.year === (cal2date.month + 1 === 1 ? cal2date.year + 1 : cal2date.year) &&
@@ -569,7 +563,7 @@ export function MDatePicker({type = "period", date, fdateSel}) {
                                     endDay.day === +day)
                                         ? "outSelected" 
                                         : ""
-                            ))} 
+                            )} 
                             onClick={outDateClick}
                         >
                             {day}
