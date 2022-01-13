@@ -1,0 +1,159 @@
+@font-face {
+    font-family: nanum;
+    src: local('NanumGothic'),url(./font/NanumGothic-Regular.ttf) format('truetype');
+    src: local("Nanum Pen"), url(./font/NanumPenScript-Regular.ttf) format('truetype');
+    src: local("NanumGothicCoding"), url(./font/NanumGothicCoding-Regular.ttf) format('truetype');
+    src: local("Noto Sans KR"), url(./font/NotoSansKR-Regular.otf) format('opentype');
+}
+.RTtable {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid lightslategray;
+    border-left: 1px solid lightslategray;
+    border-spacing: 0px;
+
+    .RTheader {
+        font-family: 'NanumGothic', 'NanumGothicCoding', nanum;
+        border: 1px solid #2d2d42;
+        color: white;
+        background-color: #2d2d42;
+        .RTheadcell {
+        }
+    }
+    .RTbody {
+        font-family: 'Nanum Pen', 'NanumGothicCoding', nanum;
+        .RTrow {
+            .RTCell {
+                height: 1.5em;
+                text-align: center;
+                .RTinput {
+                    text-align: center;
+                    width: 90%;
+                    height: 100%;
+                    border: 0px;
+                    padding: 0px;
+                    background-color: transparent;
+                    font-family: 'Nanum Pen', 'NanumGothicCoding', nanum;
+                }
+            }
+        }
+        .RTrow:nth-child(odd) {
+            background-color: #e5eaf8;
+        }     
+    }
+}
+
+.DPperiod {
+    width: 210px;
+}
+.DPterm {
+    width: 421px;
+}
+.DPerror {
+    width: 210px;
+    color: red;
+}
+.DPbody {
+    height: 275px;
+    display: flex;
+    flex-direction: column;
+    border: 0.5px solid lightgray;
+    font-family: 'Noto Sans KR', 'NanumGothic', nanum;
+    .DPheader {
+        display: flex;
+        flex-direction: row;
+        height: 25px;
+        width: 100%;
+        border-bottom: 0.5px solid lightgray;
+        .DPheadcell{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+            .DPheadbt {
+                border: 0px;
+                background-color: #ffffff;
+                font-weight: bold;
+            }
+            .DPheadbt:active{
+                background-color: gray;
+            }
+        }
+    }
+    .DPcalender {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 180px;
+        width: 100%;
+        .DPcalarea {
+            display: flex;
+            flex-wrap: wrap;
+            flex: 1;
+            .DPCalCell {
+                width: 30px;
+                height: 30px;
+                border: 0px;
+                background-color: white;
+                justify-content: center;
+                font-family: 'Noto Sans KR', 'NanumGothic', nanum;
+            }
+            .DPCalCell:hover{
+                background-color: lightcyan;
+                color: black;
+            }
+            .DPoutCell {
+                width: 30px;
+                height: 30px;
+                border: 0px;
+                background-color: white;
+                justify-content: center;
+                color: gray;
+                font-family: 'Noto Sans KR', 'NanumGothic', nanum;
+            }
+            .DPoutCell:hover{
+                background-color: #E2E2E2;
+            }
+            .selected {
+                background-color: #4B89DC;
+                color: white;
+                border: 2px solid #1835D0;
+            }
+            .outSelected {
+                border: 2px solid #B9B9B9;
+            }
+            .int {
+                background-color: #4B89DC;
+                color: white;
+                border-radius: 0px;
+            }
+        }
+        .DPborder {
+            border-left: 0.5px solid lightgray;
+        }
+    }
+    .DPselDate {
+        display: flex;
+        height: 20px;
+        width: 100%;
+        border-top: 0.5px solid lightgray;
+        font-size: 10px;
+    }
+    .DPbtbar {
+        display: flex;
+        flex-direction: row-reverse;
+        height: 25px;
+        width: 100%;
+        .DPbtcell {
+            border: 0px;
+            margin-left: 5px;
+            background-color: #ffffff;
+            font-weight: bold;
+            
+        }
+        .DPbtcell:hover{
+            background-color: lightblue;
+        }
+        
+    }
+}
