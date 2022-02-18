@@ -43,40 +43,50 @@
     }
 }
 
-.DPperiod {
-    width: 210px;
-}
-.DPterm {
-    width: 421px;
-}
-.DPerror {
-    width: 210px;
-    color: red;
-}
+
 .DPbody {
     height: 275px;
     display: flex;
     flex-direction: column;
     border: 0.5px solid lightgray;
     font-family: 'Noto Sans KR', 'NanumGothic', nanum;
+    .DPcell {
+        display: flex;
+        height: 180px;
+        flex-basis: auto;
+        flex-direction: row;
+    }
     .DPheader {
         display: flex;
         flex-direction: row;
         height: 25px;
         width: 100%;
         border-bottom: 0.5px solid lightgray;
-        .DPheadcell{
+        .DPheadbar {
             display: flex;
             flex-direction: row;
+            height: 100%;
             width: 100%;
             justify-content: space-between;
-            .DPheadbt {
-                border: 0px;
-                background-color: #ffffff;
-                font-weight: bold;
+            .DPheadcell{
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-between;
+                .DPheadbt {
+                    border: 0px;
+                    background-color: #ffffff;
+                    font-weight: bold;
+                    &:active{
+                        background-color: gray;
+                    }
+                }
             }
-            .DPheadbt:active{
-                background-color: gray;
+            .DPtextcell{
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                justify-content: center;
             }
         }
     }
@@ -86,6 +96,9 @@
         flex-wrap: wrap;
         height: 180px;
         width: 100%;
+        &:nth-child(n+2) {
+            border-left: 0.5px solid lightgray;
+        }
         .DPcalarea {
             display: flex;
             flex-wrap: wrap;
@@ -97,10 +110,30 @@
                 background-color: white;
                 justify-content: center;
                 font-family: 'Noto Sans KR', 'NanumGothic', nanum;
+                &:hover{
+                    background-color: lightcyan;
+                }
             }
-            .DPCalCell:hover{
-                background-color: lightcyan;
-                color: black;
+            .holiday {
+                color: red;
+            }
+            .special {
+                color: orange;
+            }
+            .selected {
+                background-color: #4B89DC;
+                color: white;
+                border: 2px solid #1835D0;
+            }
+            .Hselected {
+                background-color: #4B89DC;
+                color: red;
+                border: 2px solid #1835D0;
+            }
+            .Hint {
+                background-color: #4B89DC;
+                color: red;
+                border-radius: 0px;
             }
             .DPoutCell {
                 width: 30px;
@@ -111,25 +144,12 @@
                 color: gray;
                 font-family: 'Noto Sans KR', 'NanumGothic', nanum;
             }
-            .DPoutCell:hover{
-                background-color: #E2E2E2;
-            }
-            .selected {
-                background-color: #4B89DC;
-                color: white;
-                border: 2px solid #1835D0;
-            }
-            .outSelected {
-                border: 2px solid #B9B9B9;
-            }
+            
             .int {
                 background-color: #4B89DC;
                 color: white;
                 border-radius: 0px;
             }
-        }
-        .DPborder {
-            border-left: 0.5px solid lightgray;
         }
     }
     .DPselDate {
@@ -149,10 +169,9 @@
             margin-left: 5px;
             background-color: #ffffff;
             font-weight: bold;
-            
-        }
-        .DPbtcell:hover{
-            background-color: lightblue;
+            :hover{
+                background-color: lightblue;
+            }
         }
         
     }
